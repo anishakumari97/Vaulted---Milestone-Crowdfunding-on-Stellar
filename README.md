@@ -1,6 +1,6 @@
-# 🚀 Vaulted - Milestone Crowdfunding on Stellar
+# 🚀 NexFund - Milestone Crowdfunding on Stellar
 
-Vaulted is an advanced, production-ready milestone-gated crowdfunding platform built on Soroban (Stellar's smart contract platform). It solves the web3 "rug pull" problem by locking backer pledges in an on-chain Escrow and Vault, and releasing them only when predefined milestones are approved by a trusted arbiter. Every pledge, approval, and release is a transparent, auditable on-chain event.
+NexFund is an advanced, production-ready milestone-gated crowdfunding platform built on Soroban (Stellar's smart contract platform). It solves the web3 "rug pull" problem by locking backer pledges in an on-chain Escrow and Vault, and releasing them only when predefined milestones are approved by a trusted arbiter. Every pledge, approval, and release is a transparent, auditable on-chain event.
 
 ## 🔗 Live Demo & Video Pitch
 
@@ -34,11 +34,13 @@ Vaulted is an advanced, production-ready milestone-gated crowdfunding platform b
 
 Here are the required deliverables for this submission:
 
-- **Public GitHub repository:** [anumehta70/MilestoneCrowdFunding](https://github.com/anumehta70/MilestoneCrowdFunding)
+- **Public GitHub repository:** [anishakumari97/Vaulted---Milestone-Crowdfunding-on-Stellar](https://github.com/anishakumari97/Vaulted---Milestone-Crowdfunding-on-Stellar)
 - **README with complete documentation:** (This file!)
 - **Minimum 10+ meaningful commits:** Completed (View commit history)
 - **Live demo link (Vercel):** [milestone-crowd-funding.vercel.app](https://milestone-crowd-funding.vercel.app/)
-- **Contract deployment address:** `CCLADM5BEFRQYHCCBIDE7TAPJJVOVOKIFUMXRIS7SYVEOXSXLRBWGG52` (Fresh Escrow Contract)
+- **Contract deployment address:** `CBUZERLPUXUO6IHFCIP5LJD36VPVLVHYB65TQPU7PN7TMSUETQYTKOQW` (Fresh Escrow Contract)
+- **Registry Contract ID:** `CD4MBOIN3TTHV4PCHPNAPJRIPE2GCTOH2RV55OEU7YW35VODOZC5NGQ5`
+- **Vault Contract ID:** `CD65NA5GNBKSCSEC3ANHCJJHDVSSPFLYHDNGRYOOAHA4SZTUY5SZPY6Y`
 - **Transaction hash:** [b9a6ca417...](https://stellar.expert/explorer/testnet/tx/b9a6ca41713ce2605d77876bc1ade4bf69785f7f75b323ba20f5d110296ec2a9)
 - **Demo video link:** [Watch on Google Drive](https://drive.google.com/file/d/1XYoDWMFTn0EkLKJrf-lUs12sV08JrcMl/view?usp=sharing)
 
