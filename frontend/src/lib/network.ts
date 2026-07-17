@@ -4,7 +4,7 @@ export const NETWORK: NetworkName =
   (process.env.NEXT_PUBLIC_NETWORK as NetworkName) || "testnet";
 
 export const RPC_URLS: Record<NetworkName, string> = {
-  testnet: "https://soroban-testnet.stellar.org",
+  testnet: "https://soroban-testnet.stellarbound.io",
   futurenet: "https://rpc-futurenet.stellar.org",
   mainnet: "https://mainnet.sorobanrpc.com",
 };
