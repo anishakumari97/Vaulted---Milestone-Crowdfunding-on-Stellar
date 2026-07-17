@@ -53,17 +53,20 @@ export function PledgeForm({
 
   if (status === "success" && txHash) {
     return (
-      <div className="rounded-xl border border-signal-green/30 bg-signal-green/5 p-4">
-        <p className="text-sm font-medium text-signal-green">Pledge confirmed</p>
-        <p className="mt-1 text-xs text-ledger-400">
+      <div className="rounded-xl border border-status-green/30 bg-status-green/5 p-4">
+        <div className="flex items-center gap-2">
+          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-status-green/20 text-status-green text-xs">✓</span>
+          <p className="text-sm font-semibold text-status-green">Pledge confirmed!</p>
+        </div>
+        <p className="mt-2 text-xs text-space-400">
           Transaction{" "}
-          <span className="font-mono text-ledger-300">
+          <span className="font-mono text-space-300">
             {txHash.slice(0, 10)}…{txHash.slice(-6)}
           </span>
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-3 text-xs text-brass-300 underline-offset-2 hover:underline"
+          className="mt-3 text-xs text-violet-300 underline-offset-2 hover:underline"
         >
           Pledge again
         </button>
@@ -73,7 +76,7 @@ export function PledgeForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
-      <label className="block text-xs text-ledger-400" htmlFor="pledge-amount">
+      <label className="block text-xs font-medium text-space-400" htmlFor="pledge-amount">
         Pledge amount (XLM)
       </label>
       <div className="flex gap-2">
@@ -87,16 +90,16 @@ export function PledgeForm({
           onChange={(e) => setAmount(e.target.value)}
           placeholder="100"
           disabled={status === "loading"}
-          className="flex-1 rounded-xl border border-ledger-700 bg-ledger-900 px-4 py-3 font-mono text-ledger-50 outline-none placeholder:text-ledger-600 focus:border-brass-500 disabled:opacity-60"
+          className="flex-1 rounded-xl border border-space-700 bg-space-900 px-4 py-3 font-mono text-space-50 outline-none placeholder:text-space-600 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/30 disabled:opacity-60 transition"
         />
         <button
           type="submit"
           disabled={status === "loading"}
-          className="shrink-0 rounded-xl bg-brass-500 px-5 py-3 text-sm font-medium text-ledger-950 transition hover:bg-brass-400 disabled:cursor-not-allowed disabled:opacity-60"
+          className="shrink-0 rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-violet-glow transition hover:from-violet-500 hover:to-violet-400 disabled:opacity-60"
         >
           {status === "loading" ? (
             <span className="flex items-center gap-2">
-              <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-ledger-950/30 border-t-ledger-950" />
+              <span className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/30 border-t-white" />
               Confirming…
             </span>
           ) : isConnected ? (
@@ -106,8 +109,8 @@ export function PledgeForm({
           )}
         </button>
       </div>
-      {error && <p className="text-xs text-signal-red">{error}</p>}
-      <p className="text-xs text-ledger-500">
+      {error && <p className="text-xs text-status-red">{error}</p>}
+      <p className="text-xs text-space-500">
         Funds move into escrow immediately and accrue yield until milestones release them.
       </p>
     </form>

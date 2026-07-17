@@ -82,17 +82,18 @@ export default function CampaignDetailPage() {
 
         {status === "success" && detail && (
           <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
+            {/* Left column */}
             <div className="space-y-8">
               <div>
-                <span className="rounded-full bg-ledger-800 px-2.5 py-1 text-xs text-ledger-300">
+                <span className="rounded-full border border-space-700 bg-space-800 px-2.5 py-1 text-xs text-space-300">
                   {detail.meta.category}
                 </span>
-                <h1 className="mt-4 font-display text-3xl text-ledger-50 sm:text-4xl">
+                <h1 className="mt-4 font-display text-3xl font-bold text-space-50 sm:text-4xl">
                   {detail.meta.title}
                 </h1>
-                <p className="mt-2 text-sm text-ledger-400">
+                <p className="mt-2 text-sm text-space-400">
                   Created by{" "}
-                  <span className="font-mono text-ledger-300">
+                  <span className="font-mono text-violet-300">
                     {shortenAddress(detail.meta.creator)}
                   </span>{" "}
                   · {detail.backerCount} backer{detail.backerCount === 1 ? "" : "s"}
@@ -101,17 +102,17 @@ export default function CampaignDetailPage() {
 
               <div>
                 <div className="mb-3 flex items-baseline justify-between">
-                  <h2 className="font-display text-xl text-ledger-50">Milestones</h2>
+                  <h2 className="font-display text-xl font-bold text-space-50">Milestones</h2>
                   {publicKey && (
-                    <span className="text-xs text-ledger-500">
+                    <span className="text-xs text-space-500">
                       {publicKey === detail.arbiter
-                        ? "You are the arbiter for this campaign"
-                        : "Only the campaign arbiter can approve or release milestones"}
+                        ? "✓ You are the arbiter"
+                        : "Only the arbiter can manage milestones"}
                     </span>
                   )}
                 </div>
                 {actionError && (
-                  <p className="mb-3 text-xs text-signal-red">{actionError}</p>
+                  <p className="mb-3 text-xs text-status-red">{actionError}</p>
                 )}
                 <MilestoneTimeline
                   milestones={detail.milestones}
@@ -126,28 +127,31 @@ export default function CampaignDetailPage() {
               <LiveEventFeed contractIds={[detail.meta.escrowAddress]} />
             </div>
 
-            <aside className="space-y-6">
-              <div className="rounded-2xl border border-ledger-800 bg-ledger-900/60 p-5">
-                <div className="h-1.5 w-full overflow-hidden rounded-full bg-ledger-800">
+            {/* Right sidebar */}
+            <aside className="space-y-5">
+              {/* Funding progress card */}
+              <div className="rounded-2xl border border-space-700/60 bg-space-900/70 p-5 backdrop-blur-sm">
+                <div className="h-2 w-full overflow-hidden rounded-full bg-space-800">
                   <div
-                    className="h-full rounded-full bg-gradient-to-r from-brass-600 to-brass-400"
-                    style={{ width: `${formatPercent(detail.totalPledged, detail.goal)}%` }}
+                    className="h-full rounded-full bg-gradient-to-r from-violet-600 via-violet-400 to-cyan-400 transition-all"
+                    style={{ width: `${Math.min(formatPercent(detail.totalPledged, detail.goal), 100)}%` }}
                   />
                 </div>
                 <div className="mt-3 flex items-baseline justify-between">
-                  <span className="font-mono text-2xl text-ledger-50">
+                  <span className="font-mono text-2xl font-bold text-space-50">
                     {stroopsToXlm(detail.totalPledged)}
                   </span>
-                  <span className="text-sm text-ledger-400">
+                  <span className="text-sm text-space-400">
                     of {stroopsToXlm(detail.goal)} XLM
                   </span>
                 </div>
-                <p className="mt-1 text-xs text-ledger-500">
+                <p className="mt-1 text-xs text-space-500">
                   {formatCountdown(detail.deadline)}
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-ledger-800 bg-ledger-900/60 p-5">
+              {/* Pledge form card */}
+              <div className="rounded-2xl border border-space-700/60 bg-space-900/70 p-5 backdrop-blur-sm">
                 <PledgeForm escrowAddress={detail.meta.escrowAddress} onPledgeSuccess={load} />
               </div>
             </aside>

@@ -90,14 +90,19 @@ export default function CreateCampaignPage() {
     <div className="min-h-screen">
       <SiteHeader />
       <main className="mx-auto max-w-2xl px-4 py-10 sm:px-6">
-        <h1 className="font-display text-3xl text-ledger-50">Start a campaign</h1>
-        <p className="mt-2 text-sm text-ledger-400">
-          Deploy a dedicated Escrow contract for your campaign (instructions in
-          the README), then register it here so backers can discover and fund it.
-        </p>
+        {/* Header */}
+        <div className="mb-8">
+          <h1 className="font-display text-3xl font-bold text-space-50">
+            Launch a campaign
+          </h1>
+          <p className="mt-2 text-sm text-space-400">
+            Deploy a dedicated Escrow contract for your campaign (instructions in
+            the README), then register it here so backers can discover and fund it.
+          </p>
+        </div>
 
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-          <Field label="Title">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <Field label="Campaign title">
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -126,7 +131,7 @@ export default function CreateCampaignPage() {
               className="input"
             />
             {goal && (
-              <p className="mt-1 text-xs text-ledger-500">
+              <p className="mt-1 text-xs text-space-500">
                 = {xlmToStroops(goal)} stroops on-chain
               </p>
             )}
@@ -141,12 +146,13 @@ export default function CreateCampaignPage() {
             />
           </Field>
 
+          {/* Milestones */}
           <div>
             <div className="mb-2 flex items-center justify-between">
-              <label className="text-xs text-ledger-400">Milestones</label>
+              <label className="text-xs font-medium text-space-400">Milestones</label>
               <span
-                className={`text-xs ${
-                  Math.round(percentTotal) === 100 ? "text-signal-green" : "text-ledger-500"
+                className={`text-xs font-mono ${
+                  Math.round(percentTotal) === 100 ? "text-status-green" : "text-space-500"
                 }`}
               >
                 {percentTotal}% / 100%
@@ -172,7 +178,7 @@ export default function CreateCampaignPage() {
                     <button
                       type="button"
                       onClick={() => removeMilestone(i)}
-                      className="rounded-xl border border-ledger-700 px-3 text-ledger-400 transition hover:border-signal-red/50 hover:text-signal-red"
+                      className="rounded-xl border border-space-700 px-3 text-space-400 transition hover:border-status-red/50 hover:text-status-red"
                       aria-label="Remove milestone"
                     >
                       ×
@@ -184,24 +190,31 @@ export default function CreateCampaignPage() {
             <button
               type="button"
               onClick={addMilestone}
-              className="mt-3 text-xs text-brass-300 underline-offset-2 hover:underline"
+              className="mt-3 text-xs text-violet-400 underline-offset-2 hover:underline"
             >
               + Add milestone
             </button>
           </div>
 
-          {error && <p className="text-sm text-signal-red">{error}</p>}
+          {error && (
+            <div className="rounded-xl border border-status-red/30 bg-status-red/5 px-4 py-3">
+              <p className="text-sm text-status-red">{error}</p>
+            </div>
+          )}
 
           <button
             type="submit"
             disabled={submitting}
-            className="w-full rounded-xl bg-brass-500 py-3 text-sm font-medium text-ledger-950 transition hover:bg-brass-400 disabled:opacity-60"
+            className="w-full rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 py-3 text-sm font-semibold text-white shadow-violet-glow transition hover:from-violet-500 hover:to-violet-400 disabled:opacity-60"
           >
-            {submitting ? "Registering on-chain…" : isConnected ? "Register campaign" : "Connect wallet to continue"}
+            {submitting
+              ? "Registering on-chain…"
+              : isConnected
+              ? "Register campaign"
+              : "Connect wallet to continue"}
           </button>
         </form>
       </main>
-
     </div>
   );
 }
@@ -209,7 +222,7 @@ export default function CreateCampaignPage() {
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <label className="mb-1.5 block text-xs text-ledger-400">{label}</label>
+      <label className="mb-1.5 block text-xs font-medium text-space-400">{label}</label>
       {children}
     </div>
   );

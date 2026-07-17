@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
+import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const display = Fraunces({
+const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600"],
+  weight: ["500", "600", "700"],
 });
 
-const body = Inter({
+const body = DM_Sans({
   subsets: ["latin"],
   variable: "--font-body",
 });
@@ -19,9 +19,13 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vaulted — Milestone Crowdfunding on Stellar",
+  title: "NexFund — Milestone Crowdfunding on Stellar",
   description:
-    "Back projects with confidence. Pledges sit in escrow and earn yield until creators prove each milestone — then funds release, transparently, on-chain.",
+    "Fund the future. Pledges sit in smart escrow and unlock only when creators prove each milestone — transparent, trustless, on-chain.",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
@@ -31,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="bg-ledger-950 text-ledger-100 font-body antialiased">
+      <body className="bg-space-950 text-space-100 font-body antialiased">
         {children}
       </body>
     </html>

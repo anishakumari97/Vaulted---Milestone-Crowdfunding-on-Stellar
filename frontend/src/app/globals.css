@@ -4,47 +4,79 @@
 
 @layer components {
   .input {
-    @apply w-full rounded-xl border border-ledger-700 bg-ledger-900 px-4 py-3 text-ledger-50 outline-none;
+    @apply w-full rounded-xl border border-space-700 bg-space-900 px-4 py-3 text-space-50 outline-none transition;
   }
   .input:focus {
-    @apply border-brass-500;
+    @apply border-violet-500 ring-1 ring-violet-500/30;
   }
   .input::placeholder {
-    @apply text-ledger-600;
+    @apply text-space-500;
+  }
+  .btn-primary {
+    @apply rounded-xl bg-gradient-to-r from-violet-600 to-violet-500 px-5 py-3 text-sm font-semibold text-white shadow-violet-glow transition hover:from-violet-500 hover:to-violet-400 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-outline {
+    @apply rounded-xl border border-violet-500/50 px-5 py-3 text-sm font-medium text-violet-300 transition hover:border-violet-400 hover:bg-violet-500/10;
+  }
+  .card {
+    @apply rounded-2xl border border-space-700/60 bg-space-900/70 backdrop-blur-sm;
   }
 }
 
 @layer base {
   * {
-    @apply border-ledger-700;
+    @apply border-space-700;
   }
 
   body {
+    background-color: theme("colors.space.950");
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212, 165, 68, 0.08), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(124, 58, 237, 0.18), transparent),
+      radial-gradient(ellipse 40% 30% at 80% 80%, rgba(18, 200, 238, 0.06), transparent);
   }
 
   :focus-visible {
-    outline: 2px solid theme("colors.brass.400");
+    outline: 2px solid theme("colors.violet.400");
     outline-offset: 2px;
   }
 
   ::selection {
-    background-color: theme("colors.brass.500");
-    color: theme("colors.ledger.950");
+    background-color: theme("colors.violet.600");
+    color: #fff;
   }
 }
 
 @layer utilities {
-  .vault-grid-bg {
+  .grid-pattern-bg {
     background-image:
-      linear-gradient(rgba(212, 165, 68, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212, 165, 68, 0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
+      linear-gradient(rgba(124, 58, 237, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(124, 58, 237, 0.05) 1px, transparent 1px);
+    background-size: 36px 36px;
   }
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.35);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(18, 200, 238, 0.3);
+  }
+
+  .hero-gradient-text {
+    background: linear-gradient(135deg, #bb85f9, #45d6f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    background-image: linear-gradient(to right, rgba(124,58,237,0.4), rgba(18,200,238,0.4));
   }
 }
 
