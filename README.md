@@ -4,8 +4,8 @@ NexFund is an advanced, production-ready milestone-gated crowdfunding platform b
 
 ## 🔗 Live Demo & Video Pitch
 
-- **Live Platform**: [milestone-crowd-funding.vercel.app](https://milestone-crowd-funding.vercel.app/)
-- **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/1XYoDWMFTn0EkLKJrf-lUs12sV08JrcMl/view?usp=sharing)
+- **Live Platform**: [vaulted-milestone-crowdfunding-on-s.vercel.app](https://vaulted-milestone-crowdfunding-on-s.vercel.app/)
+- **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/1ZH3UTKVxYCQpUYVcLr-mJorQFbvM3XKe/view?usp=sharing)
 
 ## 🌟 Key Features
 
@@ -37,12 +37,12 @@ Here are the required deliverables for this submission:
 - **Public GitHub repository:** [anishakumari97/Vaulted---Milestone-Crowdfunding-on-Stellar](https://github.com/anishakumari97/Vaulted---Milestone-Crowdfunding-on-Stellar)
 - **README with complete documentation:** (This file!)
 - **Minimum 10+ meaningful commits:** Completed (View commit history)
-- **Live demo link (Vercel):** [milestone-crowd-funding.vercel.app](https://milestone-crowd-funding.vercel.app/)
-- **Contract deployment address:** `CBUZERLPUXUO6IHFCIP5LJD36VPVLVHYB65TQPU7PN7TMSUETQYTKOQW` (Fresh Escrow Contract)
+- **Live demo link (Vercel):** [vaulted-milestone-crowdfunding-on-s.vercel.app](https://vaulted-milestone-crowdfunding-on-s.vercel.app/)
+- **Contract deployment address:** `CDNDEOX6CW4MXD6SOOTXX45X74RY345OXCCHY3U53CYTCUMOOCDQ5LZZ` (Escrow Contract)
 - **Registry Contract ID:** `CD4MBOIN3TTHV4PCHPNAPJRIPE2GCTOH2RV55OEU7YW35VODOZC5NGQ5`
-- **Vault Contract ID:** `CD65NA5GNBKSCSEC3ANHCJJHDVSSPFLYHDNGRYOOAHA4SZTUY5SZPY6Y`
-- **Transaction hash:** [b9a6ca417...](https://stellar.expert/explorer/testnet/tx/b9a6ca41713ce2605d77876bc1ade4bf69785f7f75b323ba20f5d110296ec2a9)
-- **Demo video link:** [Watch on Google Drive](https://drive.google.com/file/d/1XYoDWMFTn0EkLKJrf-lUs12sV08JrcMl/view?usp=sharing)
+- **Vault Contract ID:** `CCLA2DBCLVHDFSXVIXPPT36JAVJ3C7VS7ZP2JCMG6RJGOF4LGPLFQZCV`
+- **Transaction hash:** [099accfa4838...](https://stellar.expert/explorer/testnet/tx/099accfa48384da9f6f87608c6544ffdf8f1e5d4ef1279d3440a48a281f966a7)
+- **Demo video link:** [Watch on Google Drive](https://drive.google.com/file/d/1ZH3UTKVxYCQpUYVcLr-mJorQFbvM3XKe/view?usp=sharing)
 
 ---
 
