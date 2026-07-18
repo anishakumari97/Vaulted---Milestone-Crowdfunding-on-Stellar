@@ -6,6 +6,8 @@ NexFund is an advanced, production-ready milestone-gated crowdfunding platform b
 
 - **Live Platform**: [vaulted-milestone-crowdfunding-on-s.vercel.app](https://vaulted-milestone-crowdfunding-on-s.vercel.app/)
 - **Demo Video**: [Watch the Demo on Google Drive](https://drive.google.com/file/d/1ZH3UTKVxYCQpUYVcLr-mJorQFbvM3XKe/view?usp=sharing)
+- **Contract Deployment ID (Escrow)**: `CDNDEOX6CW4MXD6SOOTXX45X74RY345OXCCHY3U53CYTCUMOOCDQ5LZZ`
+- **Transaction Hash**: [099accfa4838...](https://stellar.expert/explorer/testnet/tx/099accfa48384da9f6f87608c6544ffdf8f1e5d4ef1279d3440a48a281f966a7)
 
 ## 🌟 Key Features
 
