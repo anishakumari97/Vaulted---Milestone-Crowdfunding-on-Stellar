@@ -5,12 +5,14 @@ import {
   Address,
   nativeToScVal,
   scValToNative,
+  Horizon,
   type xdr,
 } from "@stellar/stellar-sdk";
-import { NETWORK_PASSPHRASE, RPC_URL } from "./network";
+import { NETWORK_PASSPHRASE, RPC_URL, HORIZON_URL } from "./network";
 import { signTransactionXdr } from "./wallet";
 
 const server = new rpc.Server(RPC_URL, { allowHttp: RPC_URL.startsWith("http://") });
+const horizonServer = new Horizon.Server(HORIZON_URL, { allowHttp: HORIZON_URL.startsWith("http://") });
 
 const BASE_FEE = "100000"; // generous fee for resource-heavy Soroban invocations
 
@@ -41,7 +43,7 @@ export async function callContract<T = unknown>(
 
   let account;
   try {
-    account = await server.getAccount(sourceAccount);
+    account = await horizonServer.loadAccount(sourceAccount);
   } catch (err) {
     throw new ContractCallError(
       "Could not load the source account from the network. It may need to be funded first.",

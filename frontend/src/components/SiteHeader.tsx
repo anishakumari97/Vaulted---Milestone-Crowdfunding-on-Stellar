@@ -8,7 +8,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <Link href="/" className="flex items-center gap-2.5 group">
           <div className="relative h-8 w-8 overflow-hidden rounded-lg ring-1 ring-violet-500/30 group-hover:ring-violet-400/60 transition">
-            <Image src="/logo.png" alt="NexFund logo" fill className="object-cover" />
+            <Image src="/logo.png" alt="NexFund logo" fill unoptimized={true} className="object-cover" />
           </div>
           <span className="font-display text-lg font-bold tracking-tight">
             <span className="hero-gradient-text">Nex</span>
