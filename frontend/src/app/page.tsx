@@ -1,7 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
 import { CampaignCard } from "@/components/CampaignCard";
 import { LoadingState, ErrorState, EmptyState } from "@/components/StateViews";
@@ -11,6 +12,36 @@ import type { AsyncStatus, CampaignStatus } from "@/types/domain";
 
 const VIEWER_ACCOUNT =
   "GBD4SEJ5AXWY3TODGXGBKLGEHFRVZN4TTMZFSQE3QD5SV5Q5LPKVH2L4";
+
+function SuccessBanner() {
+  const searchParams = useSearchParams();
+  const hash = searchParams.get("registered");
+
+  if (!hash) return null;
+
+  return (
+    <div className="mb-8 rounded-xl border border-status-green/30 bg-status-green/10 p-4">
+      <div className="flex items-center gap-3">
+        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-status-green/20 text-status-green">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" transform="translate(-2, -2)" />
+          </svg>
+        </div>
+        <div>
+          <p className="text-sm font-medium text-status-green">Campaign successfully registered on-chain!</p>
+          <a
+            href={`https://stellar.expert/explorer/testnet/tx/${hash}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-1 block text-xs text-status-green/80 hover:text-status-green underline underline-offset-2"
+          >
+            View transaction on Stellar Expert ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function HomePage() {
   const [status, setStatus] = useState<AsyncStatus>("loading");
@@ -53,6 +84,10 @@ export default function HomePage() {
       <SiteHeader />
 
       <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+        <Suspense fallback={null}>
+          <SuccessBanner />
+        </Suspense>
+
         {/* Hero Section */}
         <section className="grid-pattern-bg relative -mx-4 mb-14 overflow-hidden rounded-3xl border border-space-700/60 bg-space-900/60 px-6 py-16 sm:mx-0 sm:px-12 backdrop-blur-sm">
           {/* Floating orbs */}
