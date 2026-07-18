@@ -19,14 +19,21 @@ NexFund is an advanced, production-ready milestone-gated crowdfunding platform b
 
 ## 📸 Platform Gallery
 
-### 1. Mobile Responsive UI
-![Mobile UI](./images/Mobile_responsive_%20UI.png)
+### 1. Product Landing Page
+The main interface where users can discover campaigns, view funding progress, and explore the premium dark mode aesthetic built with Next.js and Tailwind.
+![Product Landing Page](./images/product%20landing%20page.png)
 
-### 2. CI/CD Pipeline Running
-![CI/CD Pipeline](./images/CI_CD_pipeline%20_running.png)
+### 2. Mobile Responsive UI
+NexFund is fully responsive, ensuring backers can pledge to campaigns and arbiters can approve milestones seamlessly from any mobile device.
+![Mobile UI](./images/Mobile%20responsive.png)
 
-### 3. Test Output (3+ passing tests)
-![Test Output](./images/test_output.png)
+### 3. CI/CD Pipeline Running
+Our robust GitHub Actions CI/CD pipeline automatically builds and tests the Soroban smart contracts on every push to guarantee platform stability.
+![CI/CD Pipeline](./images/CI%20CD.png)
+
+### 4. Test Output (3+ passing tests)
+Comprehensive Rust unit tests for the Escrow and Vault contracts, verifying successful pledges, milestone approvals, and failed campaign refunds.
+![Test Output](./images/test%20output.png)
 
 ---
 
