@@ -60,9 +60,14 @@ export function PledgeForm({
         </div>
         <p className="mt-2 text-xs text-space-400">
           Transaction{" "}
-          <span className="font-mono text-space-300">
-            {txHash.slice(0, 10)}…{txHash.slice(-6)}
-          </span>
+          <a
+            href={`https://stellar.expert/explorer/testnet/tx/${txHash}`}
+            target="_blank"
+            rel="noreferrer"
+            className="font-mono text-space-300 underline underline-offset-2 hover:text-violet-300"
+          >
+            {txHash.slice(0, 10)}…{txHash.slice(-6)} ↗
+          </a>
         </p>
         <button
           onClick={() => setStatus("idle")}
